@@ -2042,8 +2042,8 @@ client.on('message', message => {
 	let duration = messageArray[2];
 var prefix = '?'
 if (message.content.startsWith(prefix + "lock")) {
-    let  lock  =  message.content.split('').slice(1).join('');
-	let lockchannel = message.guild.channels.find('name', lock)
+    let lock = message.content.split(' ').slice(1).join(" ")
+    let lockchannel = member.guild.channels.find('name', lock);
 	if(!lockchannel) return message.channel.send(`CANT FIND THIS CHANNEL`)
 	if(!message.channel.guild) return message.reply(' This command only for servers');
 	if(!duration) return message.channel.send("**Type The Duration Please**");
